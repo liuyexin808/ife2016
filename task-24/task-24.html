@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>task-24</title>
+	<style type="text/css">
+		 div {
+			display: flex;
+			justify-content:space-around; 
+			flex-flow: wrap;
+    		padding: 30px;
+    		margin:  10px;
+    		border: 2px solid #000;
+    		font-size: 20px;
+    		font-weight: bold;
+		}
+		#outer_2 {
+			display: block;
+			text-align: center;	
+		}
+		#speed {
+			width: 80px;
+		}
+		input {
+			margin:10px;
+		}
+		.traverse {
+			background-color: blue;
+		}
+		.recover {
+			background-color: white;
+		}
+		.find {
+			background-color: red;
+		}
+		.focus {
+			background-color:#CCCCFF;
+		}
+		
+	</style>
+</head>
+<body>
+	<section id="outer_1">
+	<div id="node">
+		super
+		<div>
+		fish
+			<div>dog</div>
+			<div>cat</div>
+			<div>phone</div>
+		</div>
+		<div >
+		school
+			<div>book</div>
+			<div>pig</div>
+		</div>
+		<div >
+		apple
+			<div>
+			dog
+				<div>money</div>
+			</div>
+			<div>food</div>
+		</div>
+		<div>
+			phone
+		</div>
+	</div>
+</section>
+
+	<fieldset>
+		<legend>遍历方式</legend>
+		<label>深度优先遍历<input type="radio" name="traverse" value="BF" checked></label>
+		<label>广度优先遍历<input type="radio" name="traverse" value="DF"></label><br>
+		<label>遍历速度:<input type="range" id="range" max="1000" min="100" ></label>
+		<button id="traverse">开始遍历</button>
+	</fieldset>
+	
+	<fieldset>
+		<legend>查询内容</legend>
+		<label><input type="text" id="content" placeholder="输入所查询的内容">
+		<button id="search">查询</button></label>
+	</fieldset>
+
+	<fieldset>
+		<legend>修改所选节点</legend>
+		<input text="type" id="text" placeholder="输入所添加的内容">
+		<button >添加节点</button>
+		<button>删除节点</button>
+	</fieldset>
+	<script type="text/javascript" src="task-24.js">
+	</script>
+</body>
+</html>

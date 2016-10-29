@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>task-18</title>
+	<style type="text/css">
+	.block {
+		display: inline-block;
+		font-size: 26px;
+		height: 40px;
+		max-width: 200px;
+		min-width: 20px;
+		line-height: 40px;
+		text-align: center;
+		color: white;
+		background-color: red;
+		margin-right: 20px;
+		margin-top: 10px;
+		padding:10px;
+	}
+	#outer_1 {
+		display: inline-block;
+	}
+	#outer_2 {
+		display: inline-block;
+		margin-left: 20px;
+	}
+	</style>
+</head>
+<body>
+	<input type="text" id="content" />
+	<div id="outer_1">
+	<button id="pushleft">左侧入</button>
+	<button id="pushright">右侧入</button>
+	</div>
+	<div id="outer_2">
+	<button id="popleft">左侧出</button>
+	<button id="popright">右侧出</button>
+	</div>
+	<div id="container"></div>
+	<script type="text/javascript" src="task-18.js"></script>
+</body>
+</html>

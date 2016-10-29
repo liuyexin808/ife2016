@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>task-20</title>
+	<style type="text/css">
+    
+	.block {
+		display: inline-block;
+		font-size: 26px;
+		height: 20px;
+		min-width: 20px;
+		line-height: 20px;
+		text-align: center;
+		color: white;
+		background-color: #84C6FF;
+		margin-right: 10px;
+		margin-top: 10px;
+		padding:10px;
+	}
+    .block_over {
+        background-color: red;
+    }
+
+	#outer_1 {
+		height: 100px;
+		font-size: 20px;
+	} 
+	
+	#outer_2 {
+		margin-top:20px;
+	}
+	
+	</style>
+</head>
+<body>
+	<div id ="outer_1">
+	<label>Tag:<input type="text" id="content"  placeholder="输入空格逗号回车确认"></label>
+	<div id="container_1"></div>
+	</div>
+
+	<div id ="outer_2">
+	<textarea rows="5" cols="30" id="textArea" placeholder="输入符号可作为间隔符"></textarea>
+	<button id ="btn">确认爱好</button>
+	<div id="container_2"></div>
+	</div>
+	<script type="text/javascript" src="task-21.js"></script>
+</body>
+</html>

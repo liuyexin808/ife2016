@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>task-23</title>
+	<style type="text/css">
+		 div {
+			display: flex;
+			justify-content: space-around;
+    		padding: 40px;
+    		margin:  10px;
+    		border: 2px solid #000;
+    		font-size: 20px;
+    		font-weight: bold;
+		}
+		#outer {
+			display: block;
+			text-align: center;	
+		}
+		button {
+			font-size: 16px;
+			font-weight: bold;
+		}
+		
+		.traverse {
+			background-color: blue;
+		}
+		.recover {
+			background-color: white;
+		}
+		.find {
+			background-color: red;
+		}
+		
+	</style>
+</head>
+<body>
+	<div id="node">
+		super
+		<div>
+		fish
+			<div>dog</div>
+			<div>cat</div>
+			<div>phone</div>
+		</div>
+		<div >
+		school
+			<div>book</div>
+			<div>pig</div>
+		</div>
+		<div >
+		apple
+			<div>
+			dog
+				<div>money</div>
+			</div>
+			<div>food</div>
+		</div>
+		<div>
+			phone
+		</div>
+	</div>
+
+	<section id="outer">
+	<button name="traverseDF">深度优先遍历</button>
+	<button name="traverseBF">广度优先遍历</button>
+	<input type="text" id="content" placeholder="请输入查询目标">
+	<button name="searchDF">深度优先查询</button>
+	<button name="searchBF">广度优先查询</button>
+	</section>
+	<script type="text/javascript" src="task-23.js">
+	</script>
+</body>
+</html>
