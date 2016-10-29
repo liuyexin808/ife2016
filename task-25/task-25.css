@@ -1,0 +1,80 @@
+
+
+fieldset {
+	margin:0 auto;
+	height: 100px;
+	width: 500px;
+	border-radius: 5px;
+}
+
+
+
+span {
+	position: relative;
+	display: inline-block;
+	width: 100%;
+}
+
+.focus {
+	background-color: blue;
+	color:white;
+}
+.recover {
+	background-color: "";
+	color: black;
+}
+
+.trangle-right {
+	display:inline-block;
+	position: absolute;
+	cursor: pointer;
+	width: 0px;
+	height: 0px;
+	top:5px;
+	left:-8px;
+   	border-top: 5px solid transparent;
+   	border-bottom: 5px solid transparent;
+  	border-left: 5px solid black;
+}
+
+.trangle-down {
+	display:inline-block;
+	position: absolute;
+	cursor: pointer;
+	width: 0px;
+	height: 0px;
+	top:10px;
+	left:-12px;
+   	border-top: 5px solid black;
+   	border-right: 5px solid transparent;
+  	border-left: 5px solid transparent;
+}  
+
+#node {
+	border-radius: 10px;
+	border: 2px solid #000;
+
+}
+
+
+.visible {
+	display: block;
+}
+
+.hidden {
+	display: none;
+}
+section {
+	min-width:250px;
+	max-width: 500px;
+	min-height: 500px;
+	max-height: 1000px;
+	margin:0 auto;
+}
+div {
+	padding: 2px 2px 5px 15px;
+	margin: 5px 5px 5px 20px;
+	font:15px "Microsoft YaHei";
+	font-weight: bold;	
+	 border:1px solid;  
+}
