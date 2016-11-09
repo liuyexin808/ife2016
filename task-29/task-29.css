@@ -1,0 +1,51 @@
+table {
+ 	font:bold 18px "微软雅黑";
+	margin:10% auto;
+}
+
+td:first-child {
+	padding-right: 10px
+}
+
+td:nth-child(5) {
+	color: red;
+}
+
+input {
+	width: 250px;
+	height:30px;
+	border:2px solid #CCCCCC;
+	border-radius: 5px;
+}
+
+#content {
+	color: #CCCCCC;
+}
+
+.incorrect_1 {
+ 	color: red !important;
+}
+
+.incorrect_2 {
+	border-color: red;
+}
+
+.correct_1 {
+ 	color: green !important;
+}
+
+.correct_2 {
+	border-color: green;
+}
+
+
+
+button {
+	height: 35px;
+	width:60px;
+	border:1px solid #CCCCCC;
+	border-radius: 5px;
+  	margin-left: 5px;
+	color:white;
+	background-color:#2E79BC;
+}
