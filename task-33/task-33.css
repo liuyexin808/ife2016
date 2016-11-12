@@ -1,0 +1,71 @@
+* {
+	padding: 0;
+	margin:0;
+}
+#wrap {
+	width: 600px;
+	height:600px;
+	margin:0 auto;
+}
+table {
+	border: 3px solid;
+	border-collapse: collapse; 
+}
+table td {
+	width: 50px;
+	height: 50px;
+	border: 2px solid grey;
+}
+li {
+	text-align: center;
+	list-style: none;
+	font:20px "微软雅黑";
+}
+#row {
+	font-size: 0;
+	margin-left: 30px;
+}
+#row li{
+	display: inline-block;
+	font-size: 20px;
+	width:50px;
+	padding: 1px;
+}
+#col {
+	float: left;
+}
+#col li{
+	height: 50px;
+	padding:1px;
+	line-height: 50px;
+	margin-right:5px;
+}
+
+#head {
+	width: 50px;
+	height: 15px;
+	background-color: blue;
+}
+
+#block {
+	width: 50px;
+	height: 50px;
+	background-color: red;
+	transition-property:all;
+	transition: 1s;
+}
+
+select {
+	font:18px "微软雅黑";
+	 width: 200px;
+	height: 30px;
+}
+
+button {
+	width:80px;
+	height: 35px;
+}
+fieldset {
+	border-style: none;
+	text-align: center;
+}
