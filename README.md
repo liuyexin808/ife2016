@@ -17,3 +17,4 @@
 [task-29](http://liuyexin.com/ife2016/task-29/task-29.html)<br>
 [task-30](http://liuyexin.com/ife2016/task-30/task-30.html)<br>
 [task-31](http://liuyexin.com/ife2016/task-31/task-31.html)<br>
+[task-33](http://liuyexin.com/ife2016/task-33/task-33.html)<br>
