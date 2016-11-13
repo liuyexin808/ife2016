@@ -18,3 +18,4 @@
 [task-30](http://liuyexin.com/ife2016/task-30/task-30.html)<br>
 [task-31](http://liuyexin.com/ife2016/task-31/task-31.html)<br>
 [task-33](http://liuyexin.com/ife2016/task-33/task-33.html)<br>
+[task-34](http://liuyexin.com/ife2016/task-34/task-34.html)<br>
