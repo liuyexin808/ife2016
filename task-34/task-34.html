@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>task-34</title>
+	<link rel="stylesheet" type="text/css" href="task-34.css">
+</head>
+<body>
+	 <div id="wrap">
+		<ul id="row">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+			<li>7</li>
+			<li>8</li>
+			<li>9</li>
+			<li>10</li>
+		</ul>
+		<ul id="col">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+			<li>7</li>
+			<li>8</li>
+			<li>9</li>
+			<li>10</li>
+		</ul>
+		
+	<table></table>
+	</div>
+	<fieldset>
+	<select>
+		<option id="GO">GO</option>
+		<option id="TUN LEF">TUN LEF</option>
+		<option id="TUN RIG">TUN RIG</option> 
+		<option id="TUN BAC">TUN BAC</option>
+		<option id="TRA LEF">TRA LEF</option>
+		<option id="TRA TOP">TRA TOP</option>
+		<option id="TRA RIG">TRA RIG</option>
+		<option id="TRA BOT">TRA BOT</option>
+		<option id="MOV LEF">MOV LEF</option>
+		<option id="MOV TOP">MOV TOP</option>
+		<option id="MOV RIG">MOV RIG</option>
+		<option id="MOV BOT">MOV BOT</option>
+	</select>
+	<button id="btn">开始执行</button>
+	</fieldset>
+
+	<script src="util.js"></script>
+	<script src="task-34.js"></script>
+	<script type="text/javascript">
+		var map = new Map();
+		map.createMap();
+		var block = new Block(6,6); //可选择生成的位置
+		block.createBlock();
+	</script>
+</body>
+</html>
