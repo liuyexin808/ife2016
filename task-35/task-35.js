@@ -288,6 +288,7 @@ addEvent($("#command"),"keyup",function(event) {
 		command.changeNumber()
 	}
 })
+
 addEvent($("#refresh"),"click",refreshFun)
 addEvent($("#excute"),"click",excuteFun)
 addEvent($("#command"),"scroll",function(event) {

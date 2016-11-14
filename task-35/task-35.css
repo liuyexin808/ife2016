@@ -100,7 +100,6 @@ li {
 
 #btn {
 	text-align: center;
-	width:100%;
 	margin-bottom: 5px;
 }
 
@@ -123,8 +122,8 @@ button:hover {
 #info {
 	display: inline-block;
 	width:180px;
+	margin-left: 130px;
 	font-weight: bold;
-	margin-left:150px;
 	transition: 1s all;
 }
 .info_correct {
@@ -144,12 +143,12 @@ button:hover {
 
 p {
 	display: inline-block;
-	width: 400px;
+	width: 410px;
 	height: 180px;
 	font-size:16px;
 	font-weight: bold;
 	line-height: 20px;
-	border: 1px solid;
-	margin-left:65px;
+	border: 2px solid;
+	margin:5px 0 0 58px;
 	padding: 10px;
 }
