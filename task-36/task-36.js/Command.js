@@ -1,198 +1,16 @@
-
-function Map(row,col) {
-	this.row = row;
-	this.col = col;
-	this.wall = null;
-}
-//创建地图
-Map.prototype.createMap= function() {
-	var map = $("table"),
-		row_str = "",
-		col_str = "";
-	for(var i = 0; i < this.row; i++) {
-		row_str += "<td></td>"			
-	}
-	for(var j = 0; j < this.col; j++) {
-		col_str += "<tr>" + row_str + "</tr>"
-	}
-	map.innerHTML = col_str;
-};
-
-Map.prototype.getWall = function(x,y){
-	if((x <= this.row && x >= 1) && (y <= this.col && y >= 1)) {
-		this.wall = $$("tr")[y-1].querySelectorAll("td")[x-1];
-	} else {
-		 this.wall = null;
-	}
-	return this.wall;
-}
-
-Map.prototype.renderWall = function() {
-	this.wall.className = "wall";
-}
-
-Map.prototype.isWall = function(x,y) {
-	if(this.isOver(x,y)) {
-		return false;
-	}
-	return this.getWall(x,y).className === "wall";
-}
-
-Map.prototype.isOver = function(x,y) {
-	return x > this.row || x < 1 || y > this.col|| y < 1
-}
-
-Map.prototype.randomWall = function() {
-	var total = $$("td"),time = 10;
-	while(time > 0) {
-	len = Math.floor(Math.random()*total.length);
-	this.wall = total[len];
-	this.renderWall();
-	time--;
-	}
-}
-
-
-
-function Block(x,y) {
-	this.x = x;				//当前x的坐标
-	this.y = y;				//当前y的坐标
-	this.direction = "TOP"; 			//自身的方向
-	this.id = null;				//自身的dom
-	this.deg = 0;				//旋转角度
-	this.moveX = x; 			//移动后x的坐标
-	this.moveY = y;			//移动后y的坐标
-	this.behavior =					
-	 ["TOP","RIG","BOT","LEF"];				//获得地图的行列属性
-}
-//确定方向在数组第一个
-Block.prototype.confirmIndex = function() {
-	var index = this.behavior.indexOf(this.direction),
-		flag;
-	flag = this.behavior.splice(0,index);
-	this.behavior = this.behavior.concat(flag);
-};
-
-//旋转并更新方向
-Block.prototype.turnDirection = function(deg,index) {
-	this.confirmIndex();
-	this.direction = this.behavior[index];
-	this.deg += deg;
-	this.rotateAnimation();
-};
-
-//旋转动画
-Block.prototype.rotateAnimation = function() {
-	this.id.style.transform="rotate(" +  this.deg + "deg)";
-}
-
-//是否需要旋转
-Block.prototype.isRotate = function(direction) {
-	if(direction == this.direction) {
-		return true;
-	}
-}
-//根据当前方向移动后的坐标
-Block.prototype.moveDirection = function() {
-	switch(this.direction) {
-		case "TOP":this.move(0,-1); break;
-		case "RIG":this.move(1,0);	break;
-		case "BOT":this.move(0,1);	break;
-		case "LEF":this.move(-1,0);	break;
-	}
-}
-//移动后的坐标
-Block.prototype.move= function(x,y) {
-	this.moveX = this.x + x;
-	this.moveY = this.y + y;
-}
-//开始移动
-Block.prototype.moveBlock = function() {
-	if(this.isMove()) {
-		this.moveAnimation();
-		this.x = this.moveX;
-		this.y = this.moveY;
-	}  else {
-		this.moveX = this.x;
-		this.moveY = this.y;
-	}
-}
-//判断是否能前进
-Block.prototype.isMove = function() {
-	if(this.moveX > map.row || this.moveX < 1 ) {
-		return false;
-	} 
-	if(this.moveY > map.col || this.moveY < 1) {
-		return false;
-	}
-	if(map.getWall(this.moveX,this.moveY).className == "wall") {
-		return false;
-	}
-	return true;
-}
-//移动动画
-Block.prototype.moveAnimation = function() {
-	 this.id.style.left =(this.moveX-1)*52+1.5+ "px";
- 	 this.id.style.top = (this.moveY-1)*52+1.5 + "px";
-}
-
-Block.prototype.isBuild = function() {
-	if(map.wall != null && map.wall.className != "wall") {
-	return true;
-	} 
-	return false;
-}
-
-Block.prototype.buildWall = function() {
-	if(this.isBuild()) {
-		map.renderWall();
-	} else {
-		console.log("不能建造");
-	}
-}
-
-Block.prototype.isColor = function() {
-	if(map.wall != null && map.wall.className == "wall") {
-	return true; 
-	} 
-	return false;
-}
-
-Block.prototype.colorWall = function() {
-	if(this.isColor()) {
-		map.wall.style.backgroundColor = command.second;
-	} else {
-		console.log("不能粉刷");
-	}
-}
-
-
-//创建Block
-Block.prototype.createBlock = function() {
-	var table = $("table"),
-		head = document.createElement("div");
-     	body = document.createElement("div");
-     head.id ="head";
-     body.id= "block";
-     table.appendChild(body);
- 	 body.appendChild(head);
- 	 this.id = $("#block");
- 	 this.moveAnimation();
- }
-
-
 function Command() {
-	this.data = [];
-	this.index = 1;
-	this.number = 1;
-	this.id = $("#command");
-	this.value = null;
-	this.first = null;
-	this.second = null;
-	this.third = null;
-	this.end = null;
+	this.data = [];         //储存数据
+	this.index = 1;		//数据索引
+	this.number = 1;	//数字编号
+	this.id = $("#command");//文本的Dom
+	this.value = null;	//文本的内容
+	this.first = null;	//第一段命令
+	this.second = null;	//第二段命令
+	this.third = null;	//第三段命令
+	this.end = null;	//目标的坐标
 }
 
+//改变数字编号
 Command.prototype.changeNumber = function() {
 	var str = "";
 	this.getNumber();
@@ -202,6 +20,7 @@ Command.prototype.changeNumber = function() {
 	$("#side").innerHTML = "<li>1</li>"+str;
 }
 
+//获取数字编号
 Command.prototype.getNumber = function() {
 	var enter = this.id.value.match(/\n/g);
 	if(enter == null) {
@@ -210,15 +29,14 @@ Command.prototype.getNumber = function() {
 		this.number = enter.length +1;
 	}
 }
-
+//获取文本内容
 Command.prototype.getText = function() {
 	this.data = this.id.value.split("\n");
 	this.data = this.data.map(function(item){
 		return item.trim();
 	});
 }
-
-
+//判断文本内容是否符合规则
 Command.prototype.isError = function() {
 	var reg1 = /^(TRA|MOV)\s(TOP|RIG|BOT|LEF|)(\s\d*)?$/;
 		reg2 = /^(GO)(\s\d*)?$/;
@@ -233,7 +51,7 @@ Command.prototype.isError = function() {
 		return false;
 	}
 }
-
+//获取拆分后的命令
 Command.prototype.getOrder = function() {
 	var arr = this.value.split(" ");
 	if(arr[0] == "GO") {
@@ -245,7 +63,7 @@ Command.prototype.getOrder = function() {
 		this.third =  arr[2] ? arr[2] : 1;
 	}
 }
-
+//MOV命令
 Command.prototype.movWay = function() {
 	if(this.second === "TO") {
 		this.moveTo();
@@ -259,7 +77,7 @@ Command.prototype.movWay = function() {
 		this.third--;
 	}
 }
-
+//TUN命令
 Command.prototype.tunWay = function() {	
 	switch(this.second) {
 		case "LEF":block.turnDirection(-90,3);break;
@@ -267,7 +85,7 @@ Command.prototype.tunWay = function() {
 		case "BAC":block.turnDirection(180,2);break;				
 	}
 }
-
+//TRA命令
 Command.prototype.traWay = function() {
 	while (this.third > 0) {
 		switch(this.second) {
@@ -280,7 +98,7 @@ Command.prototype.traWay = function() {
 		this.third--
 	}
 }
-
+//GO命令
 Command.prototype.goWay = function() {
 	while(this.third > 0) {
 		block.moveDirection();
@@ -288,19 +106,20 @@ Command.prototype.goWay = function() {
 		this.third--;
 	}
 }
-
+//BUILD命令
 Command.prototype.buildWay = function() {
 	block.moveDirection();
 	map.getWall(block.moveX,block.moveY);
 	block.buildWall();
 }
-
+//BRC命令
 Command.prototype.colorWay = function() {
 	block.moveDirection();
 	map.getWall(block.moveX,block.moveY);
 	block.colorWall();
 }
 
+//到达指定坐标命令
 Command.prototype.moveTo = function() {
 	var start = {x:block.x,y:block.y};
 		this.end = this.getEndPoint();
@@ -308,7 +127,7 @@ Command.prototype.moveTo = function() {
 	getPathOrder();
 	moveToAnimation();
 }
-
+//获取目标的坐标
 Command.prototype.getEndPoint = function() {
 	var end = this.third.split(",");
 	return {
@@ -316,7 +135,7 @@ Command.prototype.getEndPoint = function() {
 		y:+end[1]
 	};
 }
-
+//数字编号动画
 Command.prototype.numberAnimation = function(flag) {
 	var number = $("#side").querySelectorAll("li");
 	if(this.index === 1) {
@@ -326,7 +145,7 @@ Command.prototype.numberAnimation = function(flag) {
 	number[this.index-2].className = "";
 	}
 }
-
+//重置
 Command.prototype.rest = function() {
 	var number = $("#side").querySelectorAll("li");
 	[].slice.call(number);
@@ -335,21 +154,22 @@ Command.prototype.rest = function() {
 	}) 
 	this.index = 1;
 }
-
+//清除文本内容
 Command.prototype.refresh = function() {
 	$("#side").innerHTML = "<li>1</li>"
 	this.id.value = "";
 	this.index = 1;
 	this.number = 1;
 }
-
+//初始化文本内容
 Command.prototype.init = function() {
 	this.id.value = 
-	"MOV BOT 2\nGO 3\nTUN RIG\nTRA RIG 3\nBUILD\nBRU #A11111\nMOV TO 11,11"
+	"MOV BOT 2\nGO 5\nTUN RIG\nTRA RIG 3\nBUILD\nBRU #A11111\nTRA BOT 5\nMOV TO 9,3"
 	;
 	this.changeNumber();
 }
 
+//执行命令
 Command.prototype.excuteOrder = function(){
 	switch(this.first) {
 		case "TUN":command.tunWay();break;
@@ -362,7 +182,7 @@ Command.prototype.excuteOrder = function(){
 }
 
 var timer = null;
-  
+//执行动画
 function excuteAnimation() {
 	if(command.index > command.number) {
 		return;
@@ -378,7 +198,7 @@ function excuteAnimation() {
 	command.index++;
 	timer = setTimeout(excuteAnimation,500);
 }
-
+//函数节流
 function throttle(method,context) {
 	clearTimeout(timer);
 	timer = setTimeout(function() {
@@ -386,6 +206,10 @@ function throttle(method,context) {
 	},500)
 }
 
+
+
+//事件绑定
+function event_init(){
 addEvent($("#refresh"),"click",function(){
 	command.refresh();
 });
@@ -404,11 +228,16 @@ addEvent($("table"),"click",function(event){
 	var e = event.target;
 	if(e && e.nodeName.toLowerCase() === "td"){
 		if(e.className === "wall") {
-			e.className ="";
+			e.removeAttribute("style");
+			e.removeAttribute("class");
 		} else {
 			e.className ="wall";
 		}
 	}
 })
+}
 
+var command = new Command();
+command.init();
+event_init();
 
