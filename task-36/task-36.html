@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>task-36</title>
+	<link rel="stylesheet" type="text/css" href="task-36.css">
+</head>
+<body>
+
+	 <div id="map">
+		<ul id="row">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+			<li>7</li>
+			<li>8</li>
+			<li>9</li>
+			<li>10</li>
+			<li>11</li>
+			<li>12</li>
+			<li>13</li>
+			<li>14</li>
+			<li>15</li>
+		</ul>
+		<ul id="col">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+			<li>7</li>
+			<li>8</li>
+			<li>9</li>
+			<li>10</li>
+			<li>11</li>
+			<li>12</li>
+			<li>13</li>
+			<li>14</li>
+			<li>15</li>
+		</ul>
+		<table></table>
+	</div>
+	<div id = outer>
+		<div id="btn">
+			<button id="excute">执行</button>
+			<button id="refresh">清除</button>
+			<button id="bulid">墙</button>
+		</div>
+		<div id="container">
+			<ul id="side">
+			<li>1</li>
+			</ul>
+			<textarea id="command">
+			</textarea>
+		</div>
+		<p>操作指令:<br/>
+			 输入要求大写,指令之间要有空格</br>
+			 N为执行的次数,不输入则默认执行1次</br>
+			 GO：例 GO N</br>
+			 TRA：TOP'RIG'BOT'LEF' 例 TRA TOP N</br>
+			 MOV：TOP'RIG'BOT'LEF' 例 MOV LEF N</br>
+			 TUN：LEF'RIG'BAC' 例 TUN BAC </br>
+			 TUN默认执行一次，一共12种指令
+
+		</p>
+	</div>
+	<script src="util.js"></script>
+	<script src="task-36.js"></script>
+	<script type="text/javascript">
+		var map = new Map(15,15);
+		map.createMap()
+		var block = new Block(1,1); 
+		block.createBlock();
+		var command = new Command();
+		command.init();
+	</script>
+	<script src="find.js"></script>
+</body>
+</html>			
