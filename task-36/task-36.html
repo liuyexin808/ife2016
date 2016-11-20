@@ -57,27 +57,24 @@
 			<textarea id="command">
 			</textarea>
 		</div>
-		<p>操作指令:<br/>
-			 输入要求大写,指令之间要有空格</br>
-			 N为执行的次数,不输入则默认执行1次</br>
-			 GO：例 GO N</br>
-			 TRA：TOP'RIG'BOT'LEF' 例 TRA TOP N</br>
-			 MOV：TOP'RIG'BOT'LEF' 例 MOV LEF N</br>
-			 TUN：LEF'RIG'BAC' 例 TUN BAC </br>
-			 TUN默认执行一次，一共12种指令
-
-		</p>
 	</div>
-	<script src="util.js"></script>
-	<script src="task-36.js"></script>
-	<script type="text/javascript">
-		var map = new Map(15,15);
-		map.createMap()
-		var block = new Block(1,1); 
-		block.createBlock();
-		var command = new Command();
-		command.init();
-	</script>
-	<script src="find.js"></script>
+	<p>操作指令:<br/>
+		输入要求大写,指令间要有空格,墙不可通过</br>
+		点击地图可以添加或删除墙</br>
+		N为执行的次数,不输入则默认执行1次</br>
+		GO：例 GO N</br>
+		TRA：TOP'RIG'BOT'LEF' 例 TRA TOP N</br>
+		MOV：TOP'RIG'BOT'LEF' 例 MOV LEF N</br>
+		TUN：LEF'RIG'BAC' 例 TUN BAC </br>
+		BULID：正面修建一座墙 </br>
+		BRU #AAAAAA:粉刷墙的颜色</br>
+		MOV TO X,Y：可以去地图上指定的坐标</br>
+		MOV TO写在最后执行</br>
+		</p>
+	<script src="task-36.js/util.js"></script>
+	<script src="task-36.js/Map.js"></script>
+	<script src="task-36.js/Block.js"></script>
+	<script src="task-36.js/findArithmetic.js"></script>
+	<script src="task-36.js/Command.js"></script>
 </body>
 </html>			
