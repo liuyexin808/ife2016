@@ -1,0 +1,69 @@
+body {
+	padding: 0;
+	margin:0;
+	height: 2000px;
+}
+
+.modal{
+	position:fixed;
+	height:100%;
+	width:100%;
+	left:0;
+	top:0;
+	background-color:#ccc;
+	opacity:0.8;
+}
+.modal .modal_wrap {
+	position: absolute;
+	width: 450px;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+	border: 1px solid #eee;  
+	box-shadow: 3px 3px 5px #888;
+	border-radius: 10px;
+}
+
+.modal .modal_head {
+	background-color: #81c2D6;
+	color: white;
+	padding: 8px;
+	font:16px "微软雅黑";
+	cursor: move;
+	
+}
+.modal .modal_body {
+	min-height: 150px;
+	font-size:30px;
+	padding: 10px;
+	line-height: 30px;
+	background-color:#fff;
+}
+.modal .modal_foot {
+	background-color: #fff;
+}
+
+.modal .modal_foot div{
+	box-sizing:border-box;
+	float:left;
+	font:16px "微软雅黑";
+	width:50%;
+	background-color:#fff;
+	padding:10px;
+	cursor:pointer;
+	color:#0A0A0A;
+	text-align:center;
+	transition:all 0.2s ease-in;
+}
+.modal .modal_foot div:hover{
+	background-color: #EAEAEA;
+	color: #fff;
+}
+button {
+	display: block;
+	font-size:20px;
+	width: 200px;
+	height: 100px;
+	margin: 20px auto;
+}
+
