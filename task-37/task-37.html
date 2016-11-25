@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>task-37</title>
+	<link rel="stylesheet" href="task-37.css">
+</head>
+<body>
+	
+	 <button>弹窗</button>
+<script src="task-37.js"></script>	
+<script type="text/javascript">
+var modal = new Modal({
+	content:"heyheyhey",
+	onConfirm:function() {
+		console.log("confirm");
+	},
+	onCancel:function() {
+		console.log("cancel");
+	}
+})
+document.querySelector("button").addEventListener("click",function(){modal.show(modal.content)},false);
+</script>
+</body>
+</html>
