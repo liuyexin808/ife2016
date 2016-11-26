@@ -18,11 +18,10 @@
 	}
 	function extend(o1,o2) {
 		for(var key in o2) {
-			if(typeof o1[key] !== undefined) {
+			if( !(key in o1)) {
 				o1[key] = o2[key];
 			}
 		}
-		return o1;
 	}
 	function Modal(options) {
 		var options = options|| {};
@@ -74,10 +73,16 @@
 			}
 			moveWrap(event);
 		},
+		_hideWrap:function(event) {
+			if(event.target == event.currentTarget) {
+				this.hide();
+			}
+		},
 		_initEvent:function() {
 			this.container.querySelector(".confirm").addEventListener("click",this._onConfirm.bind(this));
 			this.container.querySelector(".cancel").addEventListener("click",this._onCancel.bind(this));
 			this.head.addEventListener("mousedown",this._dragWrap.bind(this));
+			this.container.addEventListener("click",this._hideWrap.bind(this));
 		}
 	})
 	window.Modal = Modal;
