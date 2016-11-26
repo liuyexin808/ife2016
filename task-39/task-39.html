@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>task-39</title>
+	<link rel="stylesheet" type="text/css" href="task-39.css">
+</head>
+<body>
+	<script src="util.js"></script>
+	<script src="task-39.js"></script>
+	<script type="text/javascript">
+	
+	var title1 = [
+	{label:"姓名",name:"name",isSort:false},
+	{label:"语文",name:"chinese",isSort:true},
+	{label:"数学",name:"math",isSort:true},
+	{label:"英文",name:"english",isSort:true},
+	{label:"总分",name:"total",isSort:true}
+	]
+	var  data1 = {
+		xiaoming:{
+			name:"小明",
+			chinese:50,
+			math:100,
+			english:60,
+			total:210
+		},
+		xiaohong:{
+			name:"小红",
+			chinese:100,
+			math:80,
+			english:20,
+			total:200
+		},
+		xiaolan:{
+			name:"小蓝",
+			chinese:80,
+			math:70,
+			english:30,
+			total:180
+		},
+		xiaolv:{
+			name:"小绿",
+			chinese:10,
+			math:100,
+			english:60,
+			total:170
+		},
+		aming:{
+			name:"小小明",
+			chinese:50,
+			math:100,
+			english:60,
+			total:210
+		},
+		ahong:{
+			name:"小小红",
+			chinese:100,
+			math:80,
+			english:20,
+			total:200
+		},
+		alan:{
+			name:"小小蓝",
+			chinese:80,
+			math:70,
+			english:30,
+			total:180
+		},
+		alv:{
+			name:"小小绿",
+			chinese:10,
+			math:100,
+			english:60,
+			total:170,
+	},
+		am12ing:{
+			name:"小小明",
+			chinese:50,
+			math:100,
+			english:60,
+			total:210
+		},
+		ah12ong:{
+			name:"小小红",
+			chinese:100,
+			math:80,
+			english:20,
+			total:200
+		},
+		al21an:{
+			name:"小小蓝",
+			chinese:80,
+			math:70,
+			english:30,
+			total:180
+		},
+		al231v:{
+			name:"小小绿",
+			chinese:10,
+			math:100,
+			english:60,
+			total:170,
+	}
+}
+	var table1 = new Table({
+		//表格的标题数据
+		title: title1,
+		//表格的内容数据
+		data: data1,
+		//表格的位置 #id .class 标签名 
+		site: "body",
+		//表格的id
+		id:"ccc"
+	})
+
+var title2 = [
+	{label:"姓名",name:"name",isSort:false},
+	{label:"语文",name:"chinese",isSort:false},
+	{label:"数学",name:"math",isSort:true},
+	{label:"英文",name:"english",isSort:false},
+	{label:"总分",name:"total",isSort:true}
+	]
+
+var  data2 = {
+		minmin:{
+			name:"明明",
+			chinese:50,
+			math:100,
+			english:60,
+			total:210
+		},
+		honghong:{
+			name:"红红",
+			chinese:100,
+			math:80,
+			english:20,
+			total:200
+		},
+		aan:{
+			name:"蓝蓝",
+			chinese:80,
+			math:70,
+			english:30,
+			total:180
+		},
+		la2v:{
+			name:"绿绿",
+			chinese:10,
+			math:100,
+			english:60,
+			total:170
+		},
+		miain:{
+			name:"明明",
+			chinese:50,
+			math:100,
+			english:60,
+			total:210
+		},
+		honghong:{
+			name:"红红",
+			chinese:100,
+			math:80,
+			english:20,
+			total:200
+		},
+		lalan:{
+			name:"蓝蓝",
+			chinese:80,
+			math:70,
+			english:30,
+			total:180
+		},
+		lalv:{
+			name:"绿绿",
+			chinese:10,
+			math:100,
+			english:60,
+			total:170
+		},
+}	
+
+
+	var table2 = new Table({
+		//表格的标题数据
+		title: title2,
+		//表格的内容数据
+		data: data2,
+		//表格的位置
+		site: "body",
+		//表格的id
+		id:"table_2"
+	})
+
+
+	</script>
+</body>
+</html>
