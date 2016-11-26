@@ -1,0 +1,56 @@
+body {
+	padding: 0;
+	margin: 0;
+	height: 2000px;
+}
+table {
+	border:3px solid #eee;
+	border-collapse: collapse;
+	margin: 0 auto;
+	font: 18px "微软雅黑";
+	
+}
+ th,td {
+	 border: 2px solid #eee; 
+	width: 100px;
+	padding: 10px;
+	text-align: center;
+}
+
+.fixed {
+ 	position: fixed; 
+ 	top:0;
+}  
+
+
+table th {
+	position: relative;
+	background-color: #000;
+	color: #fff;
+}
+
+ .triangle_up {
+	position: absolute;
+	left:75%;
+	top:20%;
+	width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 10px solid #fff;
+    cursor: pointer;
+}
+.triangle_down {
+	position: absolute;
+	left:75%;
+	top:55%;
+	width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 10px solid #fff;
+    cursor: pointer;
+} 
+#table_2 {
+	margin-top: 200px;
+}
