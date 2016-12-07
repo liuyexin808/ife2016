@@ -17,7 +17,7 @@ Command.prototype.changeNumber = function() {
 	for(var i = 2; i < this.number+1; i++) {
 		str += "<li>" + i + "</li>";
 	}
-	$("#side").innerHTML = "<li>1</li>"+str;
+	$("#side").innerHTML = "<div class='wrap'><li>1</li>"+str +"</div>";
 }
 
 //获取数字编号
@@ -210,20 +210,11 @@ function throttle(method,context) {
 
 //事件绑定
 function event_init(){
-addEvent($("#refresh"),"click",function(){
-	command.refresh();
-});
-addEvent($("#excute"),"click",function(){
-	command.rest();
-	command.getText();
-	throttle(excuteAnimation);
-});
-addEvent($("#command"),"input",function(){
-	command.changeNumber();
-});
-addEvent($("#bulid"),"click",function(){
-	map.randomWall();
-});
+addEvent($("#refresh"),"click",function(){command.refresh();});
+addEvent($("#excute"),"click",function(){command.rest();command.getText();throttle(excuteAnimation);});
+addEvent($("#command"),"input",function(){command.changeNumber();});
+addEvent($("#bulid"),"click",function(){map.randomWall();});
+addEvent($("#command"),"scroll",function(){$(".wrap").style.top = -this.scrollTop + "px";})
 addEvent($("table"),"click",function(event){
 	var e = event.target;
 	if(e && e.nodeName.toLowerCase() === "td"){

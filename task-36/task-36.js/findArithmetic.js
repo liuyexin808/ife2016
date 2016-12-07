@@ -39,7 +39,7 @@ var openList = (function() {
 			}
 			//如果当前坐标到这个坐标的G值小于这个坐标的G值
 			//则重新赋值G,F和添加父节点
-			if(point.G > currentPoint.G + G) {
+			if( currentPoint.G + G < point.G ) {
 				point.G = currentPoint.G + G;
 				point.F = point.H + point.G;
 				point.parent = currentPoint;

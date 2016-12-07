@@ -88,6 +88,10 @@ li {
 	color:black;
 	background-color: #CECECE;
 	text-align: center;
+	overflow: hidden;
+}
+.wrap {
+	position: absolute;
 }
 #side li {
 	width: 30px;
