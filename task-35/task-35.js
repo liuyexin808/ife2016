@@ -137,7 +137,7 @@ Command.prototype.changeNumber = function() {
 	for(var i = 2; i < this.number+1; i++) {
 		str += "<li>" + i + "</li>";
 	}
-	$("#side").innerHTML = "<li>1</li>"+str;
+	$("#side").innerHTML = "<div class='wrap'><li>1</li>"+str +"</div>";
 }
 
 Command.prototype.getText = function() {
@@ -280,20 +280,13 @@ function refreshFun() {
 	command.number = 1;
 }
 
-addEvent($("#command"),"keyup",function(event) {
-	if(event.keyCode == 13) {
-		command.changeNumber();
-	}
-	if(event.keyCode == 8) {
-		command.changeNumber()
-	}
-})
+function init() {
+	addEvent($("#command"),"input",function(event) {command.changeNumber();})
+	addEvent($("#command"),"scroll",function(){$(".wrap").style.top = -this.scrollTop + "px";})
+	addEvent($("#refresh"),"click",refreshFun)
+	addEvent($("#excute"),"click",excuteFun)
+}
 
-addEvent($("#refresh"),"click",refreshFun)
-addEvent($("#excute"),"click",excuteFun)
-addEvent($("#command"),"scroll",function(event) {
-	var val = command.id.scrollTop;
-	console.log(val);
-		$("#side").scrollTop = val;
-})
+init();
+
 
